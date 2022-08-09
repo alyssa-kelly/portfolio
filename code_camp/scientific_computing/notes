@@ -1,0 +1,17 @@
+        
+    # # Minutes math 
+    # if int(sum_minute) > 59:
+    #     end_minute = int(sum_minute) % 60    
+    #     end_hour = int(end_hour) + (int(sum_minute) // 60)
+        
+    #     # Adds in 0s to minute display if necessary  
+    #     if len(str(end_minute)) == 1:
+    #         end_minute = "0" + str(end_minute)
+    #     elif len(str(end_minute)) == 0:
+    #         end_minute = "00"
+            
+    # else:
+    #     end_minute = sum_minute
+
+        # Hour math
+    sum_hour = int(start_hour) + int(add_hour) + int(carry_hour)
