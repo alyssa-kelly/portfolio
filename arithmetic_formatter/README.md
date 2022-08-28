@@ -1,5 +1,4 @@
-### Assignment
-
+### Arithmetic Formatter
 Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
 ```
   235
@@ -10,7 +9,6 @@ Students in primary school often arrange arithmetic problems vertically to make 
 Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
 
 ### For example
-
 Function Call:
 ```py
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
@@ -37,10 +35,7 @@ Output:
 ```
 
 ### Rules
-
 The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.  
-
-
 * Situations that will return an error:
   * If there are **too many problems** supplied to the function. The limit is **five**, anything more will return:
     `Error: Too many problems.`
@@ -57,13 +52,7 @@ The function will return the correct conversion if the supplied problems are pro
     * There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
 
 ### Development
-
 Write your code in `arithmetic_arranger.py`. For development, you can use `main.py` to test your `arithmetic_arranger()` function. Click the "run" button and `main.py` will run.
 
 ### Testing 
-
 The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
-
-### Submitting
-
-Copy your project's URL and submit it to freeCodeCamp.
