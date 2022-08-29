@@ -7,14 +7,14 @@ def arithmetic_arranger(problems, show_results = False):
   error = False
   error_output = ""
 
-  #Loop to split
+  # loop to split
   for problem in problems:
     problem_array = problem.split(" ")
     x = problem_array[0]
     operator = problem_array[1]
     y = problem_array[2]
       
-    #Checks for input errors
+    # checks for input errors
     if (operator != '+') and (operator != '-'):
       error = True
       error_output = "Error: Operator must be '+' or '-'."
@@ -26,14 +26,14 @@ def arithmetic_arranger(problems, show_results = False):
       error_output = "Error: Numbers must only contain digits."
     
     if error == False:  
-      #Result Finder
+      # result finder
       sum = ""
       if(operator == "+"):
         sum = str(int(x) + int(y))
       elif(operator == "-"):
         sum = str(int(x) - int(y))
       
-      #Single Problem Variables
+      # single problem variables
       length = max(len(x), len(y))
       prob_len = int(length) + 2
       top_num = str(x).rjust(prob_len)
@@ -41,13 +41,13 @@ def arithmetic_arranger(problems, show_results = False):
       dashes = "-" * (prob_len)
       result = str(sum).rjust(prob_len)
       
-      #if it's NOT the last problem...
+      # adding spaces if it's not the last problem
       if problem != problems[-1]:
         top_line += top_num + "    "
         bottom_line += bottom_num + "    "
         lines += dashes + "    "
         sum_x += result + "    "
-      else:  #if it's the last problem...
+      else:  # formatting for last problem
         top_line += top_num
         bottom_line += bottom_num
         lines += dashes
@@ -58,7 +58,7 @@ def arithmetic_arranger(problems, show_results = False):
       else: 
         output = top_line + "\n" + bottom_line + "\n" + lines
   
-    #Too many problems error
+    # too many problems error
   if (len(problems) > 5):
     error = True
     error_output = "Error: Too many problems."
@@ -67,6 +67,3 @@ def arithmetic_arranger(problems, show_results = False):
     return(error_output)
   else:
     return(output)
-
-
-print(arithmetic_arranger(['234 + 2187', '9083 - 189', '1209 + 123'], True))
