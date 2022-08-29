@@ -1,5 +1,4 @@
 class Category:
-
     def __init__(self, category):
         self.ledger = []
         self.category = category
@@ -9,7 +8,7 @@ class Category:
         name_length = len(self.category)
         n = (30 - name_length) // 2
         
-        # if title has odd number of characters
+        # formatting asterisks for odd vs even number of characters
         if name_length % 2 != 0:
             title_string = '{0}{1}{2}'.format(n * '*', self.category, (n + 1) * '*')
         else:
@@ -105,7 +104,7 @@ class Category:
         return transfer_occurred
 
 def create_spend_chart(categories):
-    # Creating list of spent amounts per category
+    # creating list of spent amounts per category
     spent_amounts = []
     descriptions = []
     for category in categories:
@@ -117,11 +116,11 @@ def create_spend_chart(categories):
         spent_amounts.append(round(spent, 2))            
     total_spent = round(sum(spent_amounts), 2)
 
-    # Figuring out percentages of total & rounding down to nearest 10
+    # calculating percentages of total & rounding down to nearest 10
     spent_amounts = [round((x / total_spent) * 100, 2)for x in spent_amounts]
     spent_amounts = [int((x // 10) * 10) for x in spent_amounts]
 
-    # Creating blank spend chart
+    # spend chart creation
     header = 'Percentage spent by category\n'
     graph = ''
     for value in reversed(range(0, 101, 10)):

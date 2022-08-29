@@ -1,5 +1,5 @@
 def add_time(start_time, add_time, weekday = None):
-    # Creating variables from function input
+    # creating variables from function input
     start_string = start_time.split(":")
     start_hour = int(start_string[0])
     start_piece = start_string[1]
@@ -16,11 +16,11 @@ def add_time(start_time, add_time, weekday = None):
     if weekday:
         weekday = weekday.lower()
     
-    # Conversion to military time if start time is after noon
+    # conversion to military time if start time is after noon
     if start_meridiem == "PM":
         start_hour = start_hour + 12
     
-    # Minute math
+    # minute math
     sum_minute = start_minute + add_minute
      
     if sum_minute > 59:
@@ -30,13 +30,13 @@ def add_time(start_time, add_time, weekday = None):
         end_minute = sum_minute 
         carry_hour = 0
     
-    # Adds in 0s to minute display if necessary  
+    # adds in 0s to minute display if necessary  
     if len(str(end_minute)) == 1:
         end_minute = "0" + str(end_minute)
     elif len(str(end_minute)) == 0:
         end_minute = "00"
     
-    # Hour math
+    # hour math
     sum_hour = add_hour + carry_hour
     end_hour = start_hour + sum_hour
  
@@ -49,7 +49,7 @@ def add_time(start_time, add_time, weekday = None):
             days_later = end_hour // 24
             end_hour = (end_hour % 24)
 
-    # Converts military back to standard if necessary & adds meridiem   
+    # converts military back to standard if necessary & adds meridiem   
     if end_hour == 0:
         end_hour = "12"
         end_meridiem = "AM"
@@ -61,7 +61,7 @@ def add_time(start_time, add_time, weekday = None):
     else:
         end_meridiem = "AM"
     
-    # Days of the week optional argument
+    # days of the week optional argument
     weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
     if weekday:
         start_index = weekdays.index(weekday)
@@ -72,15 +72,15 @@ def add_time(start_time, add_time, weekday = None):
             
         end_day = weekdays[end_index]
 
-    # Basic return string
+    # basic return string
     end_time = str(end_hour) + ":" + str(end_minute) + " " + str(end_meridiem)
     end_string = end_time
     
-    # Return string w optional argument
+    # return string w optional weekday argument
     if weekday != None:
         end_string = str(end_string) + ", " + str(end_day.capitalize())
     
-    # Added parentheses for days later when necessary
+    # adding days later parentheses when necessary
     if int(days_later) == 1:
         end_string = str(end_string) + " (next day)"
         
@@ -89,6 +89,3 @@ def add_time(start_time, add_time, weekday = None):
         end_string = str(end_string) + " " + str(days_later_string)
         
     print(end_string)
-
-
-add_time("8:16 PM", "466:02", "tuesday")

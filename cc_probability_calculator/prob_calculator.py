@@ -20,7 +20,6 @@ class Hat:
                 self.contents.remove(each)
         return pull   
 
-
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     m = 0   
     for i in range(num_experiments):
@@ -39,5 +38,4 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
             m = m
         else:
             m += 1
-    return(m/num_experiments)       
-
+    return(m/num_experiments)
