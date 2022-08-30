@@ -1,6 +1,6 @@
 import random
 import pandas as pd
-df = pd.read_csv ('/Users/alyssa/Documents/portfolio/adhd_menu/meal_list.csv', index_col=None)
+df = pd.read_csv ('/Users/alyssa/Documents/portfolio/meal_selector/meal_list.csv', index_col=None)
 meal_list = df.to_dict(orient='records')
       
 def helper(param): # param is a dict with any requirements ex: {'type' : 'main', 'effort' : 'low'}
