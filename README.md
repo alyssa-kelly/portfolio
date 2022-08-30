@@ -1,4 +1,4 @@
-# Data Analytics, Python Portfolio
+# Data Analytics & Python Portfolio
 My name is Alyssa Kelly and I'm a data analyst based in Richmond, VA. In this repository, you'll find some of my recent Python projects. Any folder that begins with `cc` is an assignment completed while earning my Data Analytics and Python certificiation from FreeCodeCamp.org. All other folders are personal projects.
 
 ## Skill Highlights
